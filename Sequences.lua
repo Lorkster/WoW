@@ -431,3 +431,31 @@ PostMacro = [[
 /console Sound_EnableSFX 1
 ]],
 }
+
+Sequences['DESTRLOCKPVE'] = {
+StepFunction = [[
+limit = limit or 1
+if step == limit then
+limit = limit % #macros + 1
+step = 1
+else
+step = step % #macros + 1
+end
+]],
+PreMacro = [[
+/console Sound_EnableSFX 0
+/targetenemy [noharm][dead]
+]],
+'/cast Shadowburn',
+'/cast Conflagrate',
+'/castsequence reset=target Immolate, Incinerate, Incinerate, Incinerate, Incinerate',
+
+PostMacro = [[
+/cast Chaos Bolt
+/cast [combat] Dark Soul: Instability
+/use [combat]13
+/use [combat]14
+/script UIErrorsFrame:Hide();
+/console Sound_EnableSFX 1
+]],
+}
