@@ -119,19 +119,17 @@ PostMacro = [[
 Sequences['GWSTT'] = { 
 PreMacro = [[
 /console Sound_EnableSFX 0
+/cast [harm] Charge; [help] Intervene
 /cast [combat] Berserker Rage
 /cast [combat] Blood Fury
 /cast [combat] Bloodbath
 /cast [combat] Demoralizing Shout
 /castsequence reset=10 Shield Charge,heroic strike
 /cast heroic strike
-/cast heroic strike
 ]],
+	'/cast Heroic Strike',
 	'/cast Shield Slam',	
 	'/cast Revenge',
-	'/cast Shield Slam',
-	'/cast Shield Slam',
-	'/cast Shield Slam',
 	'/cast Devastate',
 PostMacro = [[
 /startattack
@@ -141,7 +139,6 @@ PostMacro = [[
 /console Sound_EnableSFX 1
 ]],
 }
-
 -- Mage Frost
 Sequences['FrostDPS'] = { 
 	StepFunction = [[
